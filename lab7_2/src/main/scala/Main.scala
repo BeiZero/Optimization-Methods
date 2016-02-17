@@ -5,15 +5,15 @@ object Main {
   def main(args: Array[String]) {
     val (d1,d2,d3) = (args(0).toDouble,args(1).toDouble,args(2).toDouble)
     def phi(x:Array[Double]) = pow(x(0) - d1,2)/4+pow(x(1)-d2,2)/9 + d3
-    val (alpfa,beta,eps) = (args(3).toDouble,args(4).toDouble,args(5).toDouble)
+    val (alpfa,beta,eps) = (2,-0.5,0.05)
     var iter = 0
     val lambda = Array[Double](2,2)
     var x0 = Array[Double](0,0)
     val xz = x0
+    val xs = xz
     def M:Unit = {
-      println(s"iter = $iter xz = (${xz(0)},${xz(1)}) lambda = (${lambda(0)},${lambda(1)}) phi(x*) = ${phi(xz)}")
+      show()
       iter += 1
-      val xs = xz
       for(i <- 0 until  2){
         xs(i) = xz(i) + lambda(i)
         while(phi(xs)<phi(xz)){
@@ -29,7 +29,6 @@ object Main {
       }
     }
     M
-    println(s"iter = $iter xz = (${xz(0)},${xz(1)}) lambda = (${lambda(0)},${lambda(1)}) phi(x*) = ${phi(xz)}")
-    println(s"phi(x) = ${phi(xz)}")
+    def show() = println(f"iter = $iter xz = (${xz(0)}%2.2f,${xz(1)}%2.2f) lambda = (${lambda(0)}%2.2f,${lambda(1)}%2.2f) phi(x*) = ${phi(xz)}%2.2f")
   }
 }
