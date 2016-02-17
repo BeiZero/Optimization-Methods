@@ -10,7 +10,7 @@ object Main {
     var Fy = phi(y)
     var x = 0.5*(((b*b-y*y)*Fa-(b*b-a*a)*Fy+(y*y-a*a)*Fb)/((b-y)*Fa-(b-a)*Fy+(y-a)*Fb))
     var Fx = phi(x)
-    while (abs(x-y)>eps&&x>=a&&x<=b){
+    while (abs(x-y)>eps&&a<=x&&x<=b){
       if(x>y){
         val z = y
         val Fz = Fy
@@ -30,7 +30,7 @@ object Main {
       }
       x = 0.5*(((b*b-y*y)*Fa-(b*b-a*a)*Fy+(y*y-a*a)*Fb)/((b-y)*Fa-(b-a)*Fy+(y-a)*Fb))
       Fx = phi(x)
-      println(f"a = $a%6.2f b = $b%6.2f Fa = $Fa%6.2f Fb = $Fb%6.2f x = $x%6.2f Fx = $Fx%6.2f y = $y%6.2f Fy = $y%6.2f")
+      println(f"a = $a%6.2f b = $b%6.2f Fa = $Fa%6.2f Fb = $Fb%6.2f x = $x%6.2f Fx = $Fx%6.2f y = $y%6.2f Fy = $Fy%6.2f")
     }
   }
 }
