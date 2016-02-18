@@ -1,3 +1,5 @@
+package lab1
+
 import scala.math._
 
 object Main {
