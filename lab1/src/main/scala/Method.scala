@@ -1,3 +1,5 @@
+package lab1
+
 /**
   * Created by NoName on 18.02.2016.
   */
