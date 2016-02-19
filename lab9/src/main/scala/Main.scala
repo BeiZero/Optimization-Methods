@@ -18,11 +18,11 @@ object Main extends App{
     lambda = argmin(x,s)
     x(0)=x(0)+lambda*s(0)
     x(1)=x(1)+lambda*s(1)
-    println(s"iter = $iter x = (${x(0)},${x(1)}) lambda = $lambda prfix1(x) = ${prfix1(x)} prfix2(x) = ${prfix2(x)} phi(x) = ${phi(x)}")
+    println(f"iter = $iter x = (${x(0)}%6.2f,${x(1)}%6.2f) lambda = $lambda%6.2f prfix1(x) = ${prfix1(x)}%6.2f prfix2(x) = ${prfix2(x)}%6.2f phi(x) = ${phi(x)}%6.2f")
     iter += 1
   }
   println("Min")
-  println(s"x1 = ${x(0)}")
-  println(s"x2 = ${x(1)}")
-  println(s"f(x) = ${phi(x)}")
+  println(f"x1 = ${x(0)}%2.2f")
+  println(f"x2 = ${x(1)}%2.2f")
+  println(f"f(x) = ${phi(x)}%2.2f")
 }
