@@ -50,14 +50,7 @@ object Method {
         d1 = d2
         d2 = d0 - d1
       }
-
       if (d2 >= d1 && d1 > eps) method
-
-      if (Fy < Fx) {
-        x = y
-        Fx = Fy
-      }
-      result += Array(a, b, d0, d1, d2, x, Fx, y, Fy)
     }
 
     method

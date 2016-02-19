@@ -12,7 +12,7 @@ object Main {
 
     def phi(x:Double, d: Double, l: Double): Double = (x - d) * pow((x - l),3)
 
-    val eps = 0.005
+    val eps = args(3).toDouble
 
     def Fib(k: Int): Int = k match {
       case 0 => 0
@@ -23,9 +23,14 @@ object Main {
     val lambda_fib:Double = Fib(5)/Fib(6).toDouble
     val lambda_gold = (sqrt(5)-1)/2
 
-    def lambda(g: Boolean) = if (g) lambda_gold else lambda_fib
+    def lambda(g: Int) = if (g<=0) lambda_gold else Fib(g-1)/Fib(g).toDouble
 
-    val data = Method(phi, args(0).toDouble, args(1).toDouble, lambda(true), eps)
+    val data = Method(
+      phi,
+      args(0).toDouble,
+      args(1).toDouble,
+      lambda(args(2).toInt),
+      eps)
 
     val tableHeader = Array("k","a","b","d0","d1","d2","x","Fx","y","Fy")
     tableHeader.foreach(s => printf("%1$10s", s))
@@ -37,5 +42,13 @@ object Main {
       println
       k += 1
     }
+
+    def getAnswer(d: Array[Array[Double]]): (Double, Double) = {
+      if (d.last(6) < d.last(8)) return (d.last(5), d.last(6))
+      else return (d.last(7), d.last(8))
+    }
+
+    println
+    println(f"Ответ: точка локального минимума - (${getAnswer(data.toArray)._1}%8.5f, ${getAnswer(data.toArray)._2}%8.5f)")
   }
 }
