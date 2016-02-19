@@ -15,15 +15,15 @@ object Main extends App{
   var iter = 0
   val x = Array[Double](0,0)
   while (abs(prfi1(x))>eps){
-    println(s"iter = $iter x = (${x(0)},${x(1)}) prfi1(x) = ${prfi1(x)} prfi2(x) = ${prfi2(x)} phi(x) = ${phi(x)}")
+    show()
     iter += 1
     val p1 = prfi1x2(x)
     val p2 = prfi2x2(x)
     x(0) = x(0)-prfi1x1(x)/prfi2x1(x)
     x(1) = x(1)-p1/p2;
   }
-  println(s"iter = $iter x = (${x(0)},${x(1)}) prfi1(x) = ${prfi1(x)} prfi2(x) = ${prfi2(x)} phi(x) = ${phi(x)}")
+  def show() = println(f"iter = $iter x = (${x(0)}%2.2f,${x(1)}%2.2f) prfi1(x) = ${prfi1(x)}%2.2f prfi2(x) = ${prfi2(x)}%2.2f phi(x) = ${phi(x)}%2.2f")
   println("Min")
-  println(s"x = (${x(0)},${x(1)})")
-  println(s"f(x) = ${phi(x)}")
+  println(f"x = (${x(0)}%2.2f,${x(1)}%2.2f)")
+  println(f"f(x) = ${phi(x)}%2.2f")
 }
