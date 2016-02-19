@@ -16,11 +16,12 @@ object Method {
 
 
 
-  def run(f: (Double, Double, Double) => Double, d:Double, l:Double, lambda: Double, eps: Double): ArrayBuffer[ArrayBuffer[Double]] = {
+  def run(f: (Double, Double, Double) => Double, d:Double, l:Double, lambda: Double, eps: Double): ArrayBuffer[Tuple9[Double,Double,Double,Double,Double,Double,Double,Double,Double]] = {
     val lab1result = lab1.Method.run(f,d,l)
     var (a,b) = (lab1result._1, lab1result._2)
 
-    var result: ArrayBuffer[ArrayBuffer[Double]] = ArrayBuffer[ArrayBuffer[Double]]()
+    var result: ArrayBuffer[Tuple9[Double,Double,Double,Double,Double,Double,Double,Double,Double]] = new ArrayBuffer[Tuple9[Double,Double,Double,Double,Double,Double,Double,Double,Double]]()
+    val phi_c = curry(f, d, l)
 
     def method(m: Double, n: Double): Unit = {
       var d0 = n-m
@@ -29,26 +30,14 @@ object Method {
       var x = n-d1
       var y = m+d1
 
-      val phi_c = curry(f, d, l)
-
       var Fx = phi_c(x)
       var Fy = phi_c(y)
 
       var d2 = d0-d1
 
-      var stepresult = new ArrayBuffer[Double]()
+
       while (d2<d1 && d1>eps) {
-        stepresult.clear()
-        stepresult += a
-        stepresult += b
-        stepresult += d0
-        stepresult += d1
-        stepresult += d2
-        stepresult += x
-        stepresult += Fx
-        stepresult += y
-        stepresult += Fy
-        result += stepresult
+        result += new Tuple9(a,b,d0,d1,d2,x,Fx,y,Fy)
         if (Fx<=Fy) {
           b=y
           y=x
@@ -68,25 +57,18 @@ object Method {
         d2=d0-d1
       }
 
-      if (d2>=d1) method(a,b)
+      //if (d2>=d1) method(a,b)
 
-      stepresult.clear()
-      stepresult += a
-      stepresult += b
-      stepresult += d0
-      stepresult += d1
-      stepresult += d2
-      stepresult += x
-      stepresult += Fx
-      stepresult += y
-      stepresult += Fy
-      result += stepresult
+
 
       if (Fy<Fx) {
         x=y
         Fx=Fy
       }
+      result += new Tuple9(a,b,d0,d1,d2,x,Fx,y,Fy)
     }
+
+    method(a,b)
 
     result
   }
