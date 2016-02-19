@@ -10,7 +10,7 @@ object Main {
   def main(args: Array[String]): Unit = {
     println("Общий вид уравнения phi(x)=(x-d)(x-l)")
 
-    def phi(x:Double, d: Double, l: Double): Double = (x - d) * (x - l)
+    def phi(x:Double, d: Double, l: Double): Double = (x - d) * pow((x - l),3)
 
     val eps = 0.05
 

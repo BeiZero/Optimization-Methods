@@ -8,7 +8,7 @@ object Main {
     var b = args(3).toDouble
     val eps = args(4).toDouble
     def phi(x:Double) = (x-d)*pow((x-l),3)
-    def pphi(x:Double) = pow(x-l,2)*(4*x-3*d-l)
+    def pphi(x:Double) = (4*x-3*d-l)
     var y = a
     if(pphi(y)>0) {M;return}
     y = b
