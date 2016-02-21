@@ -5,7 +5,7 @@ import scala.collection.mutable.ArrayBuffer
   */
 object Method {
 
-  var debug = false
+  var debug = true
 
   var da: ArrayBuffer[Array[Double]] = new ArrayBuffer[Array[Double]]()
 
