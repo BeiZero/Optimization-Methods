@@ -8,7 +8,7 @@ object Main {
     var Fa = phi(a)
     var Fb = phi(b)
     var Fy = phi(y)
-    var x = y - (b-y)*(y-a)*(Fb-Fa)/((b-y)*Fa-(b-a)*Fy+(y-a)*Fb)
+    var x = y - (-3*d-l+4*y)*pow((-l+y),2)/(6*(d+l-2*y)*(l-y))
     var Fx = phi(x)
     while (abs(x-y)>eps&&a<=x&&x<=b){
       println(f"a = $a%6.2f b = $b%6.2f Fa = $Fa%6.2f Fb = $Fb%6.2f x = $x%6.2f Fx = $Fx%6.2f y = $y%6.2f Fy = ${phi(y)}%6.2f")
@@ -29,7 +29,7 @@ object Main {
         a = x
         Fa = phi(a)
       }
-      x = y - (b-y)*(y-a)*(Fb-Fa)/((b-y)*Fa-(b-a)*Fy+(y-a)*Fb)
+      x = y - (-3*d-l+4*y)*pow((-l+y),2)/(6*(d+l-2*y)*(l-y))
       Fx = phi(x)
     }
     println(f"a = $a%6.2f b = $b%6.2f Fa = $Fa%6.2f Fb = $Fb%6.2f x = $x%6.2f Fx = $Fx%6.2f y = $y%6.2f Fy = ${phi(y)}%6.2f")
