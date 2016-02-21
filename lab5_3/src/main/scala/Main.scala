@@ -10,7 +10,7 @@ object Main {
     var Fy = phi(y)
     var x = 0.5*(((b*b-y*y)*Fa-(b*b-a*a)*Fy+(y*y-a*a)*Fb)/((b-y)*Fa-(b-a)*Fy+(y-a)*Fb))
     var Fx = phi(x)
-    while (abs(x-y)>eps&&a<=x&&x<=b){
+    while (abs(x-y)>eps){
       if(x>y){
         val z = y
         val Fz = Fy
