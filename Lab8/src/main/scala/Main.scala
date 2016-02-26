@@ -49,8 +49,8 @@ object Main extends App {
     } else {
       if(phi(x(n+2))>phi(x(g))){
         if(phi(x(n+2))<=phi(x(h))) x(h) = x(n+2)
-        x(n + 4)(0) = x(n + 1)(0) + gamma * (x(h)(0) - x(n + 1)(0));
-        x(n + 4)(1) = x(n + 1)(1) + gamma * (x(h)(1) - x(n + 1)(1));
+        x(n + 4)(0) = x(n + 1)(0) + beta * (x(h)(0) - x(n + 1)(0));
+        x(n + 4)(1) = x(n + 1)(1) + beta * (x(h)(1) - x(n + 1)(1));
         if(phi(x(n+4))<=phi(x(h))) x(h) = x(n+4)
         else for(i <- 0 until n){
           x(i)(0) = x(i)(0) + beta * (x(i)(0) - x(l)(0));
@@ -73,11 +73,10 @@ object Main extends App {
       x(i)(0) = x(l)(0) + delta*(x(i)(0)-x(l)(0))
       x(i)(1) = x(l)(1) + delta*(x(i)(1)-x(l)(1))
     }
-    println(s)
     show()
   } while (sqrt(s) > eps)
   def show() = {
-    for(i <- 0 until 7) print(f"phi(${x(i)(0)}%2.2f,${x(i)(1)}%2.2f) = ${phi(x(i))}%2.2f  ")
+    for(i <- 0 until 6) print(f"phi(${x(i)(0)}%2.2f,${x(i)(1)}%2.2f) = ${phi(x(i))}%2.2f  ")
     println
   }
 }
