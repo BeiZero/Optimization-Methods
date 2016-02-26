@@ -11,7 +11,7 @@ object Main {
     var x = y - (-3*d-l+4*y)*pow((-l+y),2)/(6*(d+l-2*y)*(l-y))
     var Fx = phi(x)
     while (abs(x-y)>eps&&a<=x&&x<=b){
-      println(f"a = $a%6.2f b = $b%6.2f Fa = $Fa%6.2f Fb = $Fb%6.2f x = $x%6.2f Fx = $Fx%6.2f y = $y%6.2f Fy = ${phi(y)}%6.2f")
+      println(f"a = $a%9.5f b = $b%9.5f Fa = $Fa%9.5f Fb = $Fb%9.5f x = $x%9.5f Fx = $Fx%9.5f y = $y%9.5f Fy = ${phi(y)}%9.5f")
       if(x>y){
         val z = y
         val Fz = Fy
@@ -32,6 +32,6 @@ object Main {
       x = y - (-3*d-l+4*y)*pow((-l+y),2)/(6*(d+l-2*y)*(l-y))
       Fx = phi(x)
     }
-    println(f"a = $a%6.2f b = $b%6.2f Fa = $Fa%6.2f Fb = $Fb%6.2f x = $x%6.2f Fx = $Fx%6.2f y = $y%6.2f Fy = ${phi(y)}%6.2f")
+    println(f"a = $a%9.5f b = $b%9.5f Fa = $Fa%9.5f Fb = $Fb%9.5f x = $x%9.5f Fx = $Fx%9.5f y = $y%9.5f Fy = ${phi(y)}%9.5f")
   }
 }

@@ -8,24 +8,7 @@ import scala.math._
 object Main {
 
   def main(args: Array[String]): Unit = {
-<<<<<<< HEAD
-    println("Общий вид уравнения phi(x)=(x-d)(x-l)")
 
-    def phi(x:Double, d: Double, l: Double): Double = (x - d) * pow((x - l),3)
-
-    val eps = 0.05
-
-    def Fib(k: Int): Int = {
-      if (k == 0) {
-        0
-      }
-      else {
-        if (k == 1) {
-          1
-        }
-        else Fib(k-2) + Fib(k-1)
-      }
-=======
     println("Общий вид уравнения phi(x)=(x-d)(x-l)^3")
 
     def phi(x:Double, d: Double, l: Double): Double = (x - d) * pow((x - l),3)
@@ -36,7 +19,6 @@ object Main {
       case 0 => 0
       case 1 => 1
       case n => Fib(n-1) + Fib(n-2)
->>>>>>> pr/5
     }
 
     val lambda_fib:Double = Fib(5)/Fib(6).toDouble
