@@ -3,7 +3,7 @@ import scala.math._
 object Main extends App {
   val (d1, d2, d3) = (args(0).toDouble, args(1).toDouble, args(2).toDouble)
   def phi(x: Array[Double]) = pow(x(0) - d1, 2) / 4 + pow(x(1) - d2, 2) / 9 + d3
-  val (alpfa, beta, eps) = (2, -0.5, 0.5)
+  val (alpfa, beta, eps) = (2, -0.5, args(3).toDouble)
   def argmin(x: Array[Double], l: Double, n: Int) = {
     var lambda = l
     val xs = x(n)

@@ -5,7 +5,7 @@ object Main {
   def main(args: Array[String]) {
     val (d1,d2,d3) = (args(0).toDouble,args(1).toDouble,args(2).toDouble)
     def phi(x:Array[Double]) = pow(x(0) - d1,2)/4+pow(x(1)-d2,2)/9 + d3
-    val (alpfa,beta,eps) = (2,-0.5,0.5)
+    val (alpfa,beta,eps) = (2,-0.5,0.2)
     var iter = 0
     val lambda = Array[Double](2,2)
     var x0 = Array[Double](0,0)
