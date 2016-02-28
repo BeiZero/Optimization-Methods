@@ -33,5 +33,8 @@ object Main {
       Fx = phi(x)
     }
     println(f"a = $a%9.5f b = $b%9.5f Fa = $Fa%9.5f Fb = $Fb%9.5f x = $x%9.5f Fx = $Fx%9.5f y = $y%9.5f Fy = ${phi(y)}%9.5f")
+    println("Ответ: ")
+    if(phi(y)>phi(x)) println(f"x = $x%9.5f Fx = ${phi(x)}%9.5f")
+    else println(f"y = $y%9.5f Fy = ${phi(y)}%9.5f")
   }
 }

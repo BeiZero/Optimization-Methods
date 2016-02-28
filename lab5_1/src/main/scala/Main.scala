@@ -12,6 +12,7 @@ object Main {
     def ppphi(x:Double) = 6*(d+l-2*x)*(l-x)
     var x = 0.0
     def M:Unit = {
+      println(f"y = $y%6.4f Fy = ${phi(y)}%6.4f")
       x = y - pphi(y)/ppphi(y)
       if(x<a||x>b) return
       if(abs(phi(x)-phi(y))>eps){
