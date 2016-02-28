@@ -27,8 +27,8 @@ object Main {
     d += args(0).toDouble
     d += args(1).toDouble
     d += args(2).toDouble
-    val (a,b) = (0,2*d(0)+2*d(1)+2*d(2))
     val (alpha, eps) = (args(3).toDouble,args(4).toDouble)
+    val (a,b): (Double, Double) = if (args.length == 5) (0,2*d(0)+2*d(1)+2*d(2)) else (args(5).toDouble, args(6).toDouble)
 
     def phi(x: Double): Double = {
       var result: Double = 0
