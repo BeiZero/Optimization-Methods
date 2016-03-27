@@ -10,7 +10,7 @@ object Main extends App {
   val Array(d1, d2, d3) = args map (_ toInt)
   def phi(x:Array[Double]) = pow(x(0) - d1, 2) / 4 + pow(x(1) - d2, 2) / 9 + d3
   var x = Array(Array(0.0, 0.0), Array(1.0, 0.0), Array(0.0, 1.0),Array(0.0,0.0),Array(0.0,0.0),Array(0.0,0.0),Array(0.0,0.0))
-  val (alpha, beta, gamma, delta, eps) = (1, 0.5, 2, 0.5, 0.01)
+  val (alpha, beta, gamma, delta, eps) = (1, 0.5, 2, 0.5, 0.001)
   var s = 0.0
   do {
     var h = 0
@@ -79,4 +79,5 @@ object Main extends App {
     for(i <- 0 until 6) print(f"phi(${x(i)(0)}%2.2f,${x(i)(1)}%2.2f) = ${phi(x(i))}%2.2f  ")
     println
   }
+  println(f"Ответ: phi(${x(1)(0)}%2.2f,${x(1)(1)}%2.2f) = ${phi(x(1))}%2.2f")
 }
